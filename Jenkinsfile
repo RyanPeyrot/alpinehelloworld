@@ -8,24 +8,6 @@ pipeline {
                 git 'https://github.com/votre-utilisateurhttps://github.com/RyanPeyrot/alpinehelloworld.git'
             }
         }
-        stage('Build') {
-            steps {
-                // Étape de construction du projet
-                sh 'mvn clean package'
-            }
-        }
-        stage('Test') {
-            steps {
-                // Étape pour exécuter les tests
-                sh 'mvn test'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                // Étape de déploiement (exemple: copier les fichiers générés vers un serveur)
-                sh 'scp target/*.jar utilisateur@serveur:/chemin/vers/depot'
-            }
-        }
     }
     
     post {
