@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Étape pour récupérer le code depuis un référentiel Git
-                git 'https://github.com/votre-utilisateur/votre-projet.git'
+                git 'https://github.com/votre-utilisateurhttps://github.com/RyanPeyrot/alpinehelloworld.git'
             }
         }
         stage('Build') {
