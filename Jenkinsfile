@@ -13,7 +13,7 @@ pipeline {
              agent any
              steps {
                 script {
-                  sh 'docker build --platform linux/amd64 -t ${ID_DOCKER}/$IMAGE_NAME:$IMAGE_TAG .'
+                  sh 'docker build -t ${ID_DOCKER}/$IMAGE_NAME:$IMAGE_TAG --platform linux/amd64 .'
                 }
              }
         }
