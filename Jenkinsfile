@@ -55,12 +55,12 @@ pipeline {
      stage ('Login and Push Image on docker hub') {
           agent any
         environment {
-           DOCKERHUB_PASSWORD  = credentials('dockerhub')
+           DOCKERHUB_CREDENTIALS  = credentials('dockerhub')
         }            
           steps {
              script {
                sh '''
-                   echo $DOCKERHUB_PASSWORD_PWD | docker login -u $ID_DOCKER
+                   echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $ID_DOCKER
                    docker push ${ID_DOCKER}/$IMAGE_NAME:$IMAGE_TAG
                '''
              }
