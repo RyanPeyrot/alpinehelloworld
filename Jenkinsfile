@@ -13,7 +13,7 @@ pipeline {
              agent any
              steps {
                 script {
-                  sh 'docker build --platform linux/amd64 -t ${ID_DOCKER}/$IMAGE_NAME:$IMAGE_TAG .'
+                  sh 'docker build -t ${ID_DOCKER}/$IMAGE_NAME:$IMAGE_TAG .'
                 }
              }
         }
@@ -79,10 +79,10 @@ pipeline {
           script {
             sh '''
               npm i -g heroku@7.68.0
-              heroku container:login
-              heroku create $STAGING || echo "project already exist"
-              heroku container:push -a $STAGING web
-              heroku container:release -a $STAGING web
+              sudo heroku container:login
+              sudo heroku create $STAGING || echo "project already exist"
+              sudo heroku container:push -a $STAGING web
+              sudo heroku container:release -a $STAGING web
             '''
           }
         }
