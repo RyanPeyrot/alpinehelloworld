@@ -1,9 +1,11 @@
 pipeline {
      environment {
+       PROD_APP_ENDPOINT = "https://ryanprt-staging-6ae2a6c83a19.herokuapp.com"  
+       STG_APP_ENDPOINT = "https://ryanprt-staging-6ae2a6c83a19.herokuapp.com"
        ID_DOCKER = "${ID_DOCKER_PARAMS}"
        IMAGE_NAME = "alpinehelloworld"
        IMAGE_TAG = "latest"
-//       PORT_EXPOSED = "80" à paraméter dans le job
+//     PORT_EXPOSED = "80" à paraméter dans le job
        STAGING = "${ID_DOCKER}-staging"
        PRODUCTION = "${ID_DOCKER}-production"
      }
