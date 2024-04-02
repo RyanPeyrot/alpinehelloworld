@@ -1,0 +1,1 @@
+:warning: Si github a du mal à lire le badge, vérifier les autorisations d'accès dans les paramètres du serveur jenkins: Tableau de bord → Configurer la sécurité globale → Autorisation → Vérifier que Allow anonymous read access est activé
